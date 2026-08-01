@@ -1,6 +1,22 @@
 import Link from "next/link";
 import Image from "next/image";
+import type { Metadata } from "next";
 import { projects } from "@/data/projects";
+
+export const metadata: Metadata = {
+  title: "Portofolio website untuk bisnis lokal",
+  description: "Lihat website yang GetStore rancang untuk barbershop, salon, laundry, kuliner, dan bisnis lokal lainnya di Indonesia.",
+  alternates: { canonical: "/portfolio" },
+  openGraph: {
+    type: "website",
+    locale: "id_ID",
+    siteName: "GetStore",
+    title: "Portofolio website untuk bisnis lokal | GetStore",
+    description: "Lihat website yang GetStore rancang untuk bisnis lokal di Indonesia.",
+    url: "/portfolio",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Portofolio website GetStore" }],
+  },
+};
 
 export default function PortfolioPage() {
   return (

@@ -14,9 +14,27 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://getstore.my.id"),
-  title: "GetStore — Website yang terasa seperti bisnis kamu",
+  title: {
+    default: "GetStore — Website yang terasa seperti bisnis kamu",
+    template: "%s | GetStore",
+  },
   description: "GetStore merancang dan mengembangkan website profesional untuk UMKM Indonesia.",
-  alternates: { canonical: "https://getstore.my.id" },
+  alternates: { canonical: "/" },
+  openGraph: {
+    type: "website",
+    locale: "id_ID",
+    url: "https://getstore.my.id",
+    siteName: "GetStore",
+    title: "GetStore — Website yang terasa seperti bisnis kamu",
+    description: "GetStore merancang dan mengembangkan website profesional untuk UMKM Indonesia.",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "GetStore — Website untuk bisnis lokal" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "GetStore — Website yang terasa seperti bisnis kamu",
+    description: "GetStore merancang dan mengembangkan website profesional untuk UMKM Indonesia.",
+    images: ["/og-image.png"],
+  },
   icons: { icon: "/icon.svg", shortcut: "/icon.svg" },
 };
 

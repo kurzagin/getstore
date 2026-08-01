@@ -32,8 +32,46 @@ const faqs = [
   ["Apakah bisa dibantu menyiapkan konten?", "Bisa. Kami dapat membantu merapikan kata-kata, memilih gambar, dan memastikan seluruh ceritanya terasa seperti bisnis kamu."],
 ];
 
+const structuredData = [
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    name: "GetStore",
+    url: "https://getstore.my.id",
+    logo: "https://getstore.my.id/icon.svg",
+    description: "GetStore merancang dan mengembangkan website profesional untuk UMKM Indonesia.",
+    areaServed: {
+      "@type": "Country",
+      name: "Indonesia",
+    },
+    telephone: "+6287794620631",
+    email: "halo@getstore.my.id",
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "GetStore",
+    url: "https://getstore.my.id",
+    inLanguage: "id-ID",
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map(([question, answer]) => ({
+      "@type": "Question",
+      name: question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: answer,
+      },
+    })),
+  },
+];
+
 export default function Home() {
-  return <main className="overflow-hidden">
+  return <>
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
+    <main className="overflow-hidden">
     <section className="min-h-[100dvh] bg-[#f2eee8] px-5 pb-8 pt-5 text-[#252420] md:px-10 md:pt-7">
       <nav className="mx-auto flex max-w-[1320px] items-center justify-between border-b border-[#252420]/15 pb-5" aria-label="Navigasi utama"><a href="#top" className="font-display text-[23px] font-semibold tracking-[-0.06em]">getstore<span className="text-[#d7663f]">.</span></a><div className="hidden items-center gap-8 font-mono text-[10px] uppercase tracking-[0.18em] text-[#6f6a63] md:flex"><a className="transition-colors hover:text-[#d7663f]" href="#work">Pilihan karya</a><a className="transition-colors hover:text-[#d7663f]" href="#process">Proses</a><a className="transition-colors hover:text-[#d7663f]" href="#pricing">Harga</a></div><a href="https://wa.me/6287794620631" className="rounded-full bg-[#252420] px-5 py-3 font-mono text-[10px] uppercase tracking-[0.16em] text-[#f2eee8] transition-transform hover:-translate-y-0.5">Mari ngobrol</a></nav>
       <div id="top" className="mx-auto grid max-w-[1320px] gap-12 pb-8 pt-12 md:grid-cols-[0.9fr_1.1fr] md:items-end md:gap-16 md:pb-14 md:pt-20"><div className="relative z-10"><Label number="01">Website untuk bisnis lokal</Label><h1 className="mt-7 max-w-[640px] font-display text-[clamp(3.25rem,6.5vw,6.8rem)] font-medium leading-[0.91] tracking-[-0.075em]">Bikin bisnis kamu terlihat <em className="font-display not-italic text-[#d7663f]">siap.</em></h1><p className="mt-8 max-w-[420px] text-[17px] leading-7 text-[#635e57]">Website yang dirancang untuk UMKM Indonesia—supaya calon pelanggan percaya sejak pertama melihat.</p><div className="mt-9 flex flex-wrap items-center gap-5"><a href="#work" className="group inline-flex items-center gap-4 rounded-full bg-[#d7663f] px-6 py-4 font-mono text-[10px] uppercase tracking-[0.16em] text-white transition-transform hover:-translate-y-1">Lihat karya kami <span className="transition-transform group-hover:translate-x-1"><Arrow /></span></a><a href="#why" className="font-mono text-[10px] uppercase tracking-[0.16em] text-[#777068] underline decoration-[#d7663f] underline-offset-8">Kenapa GetStore</a></div></div><div className="relative min-h-[390px] md:min-h-[570px]"><div className="absolute -right-5 top-0 h-[86%] w-[74%] overflow-hidden md:-right-10"><Image src={images.hero} alt="Interior restoran dengan cahaya alami" fill priority sizes="(max-width: 768px) 80vw, 50vw" className="object-cover object-top saturate-[0.72]" /></div><div className="absolute bottom-0 left-0 w-[48%] border border-[#f2eee8] bg-[#252420] p-4 text-[#f2eee8] shadow-[12px_12px_0_#d7663f] md:p-5"><p className="font-mono text-[9px] uppercase leading-4 tracking-[0.16em] text-[#aaa49a]">Dibuat untuk bisnis<br />yang terus melangkah</p><p className="mt-8 font-display text-3xl leading-none tracking-[-0.06em]">Bisnis kecil.<br /><span className="text-[#d7663f]">Kesan besar.</span></p></div><span className="absolute right-0 top-[89%] font-mono text-[9px] uppercase tracking-[0.2em] text-[#9a9289] [writing-mode:vertical-rl]">GetStore / 2024—25</span></div></div>
@@ -51,5 +89,6 @@ export default function Home() {
     <section className="bg-[#252420] px-5 py-24 text-[#f2eee8] md:px-10 md:py-32"><div className="mx-auto max-w-[1320px]"><div className="grid gap-16 md:grid-cols-[0.8fr_1.2fr]"><div><Label number="06">Kata mereka</Label><p className="mt-8 max-w-[260px] text-sm leading-6 text-[#aaa49a]">Ukuran terbaik dari karya kami adalah seberapa jelas ia membantu bisnis yang baik untuk dilihat.</p></div><blockquote><p className="max-w-[830px] font-display text-[clamp(2.2rem,4vw,4.5rem)] leading-[0.98] tracking-[-0.07em]">“GetStore membantu kami menjelaskan apa yang membuat tempat kami berbeda. Sekarang pelanggan datang dengan gambaran yang sudah jelas.”</p><footer className="mt-8 font-mono text-[10px] uppercase tracking-[0.16em] text-[#d7663f]">— Nanda, Warung Pagi</footer></blockquote></div><div className="mt-24 grid gap-5 border-t border-[#f2eee8]/20 pt-6 md:grid-cols-[1fr_1fr]"><div><Label number="07">Pertanyaan umum</Label></div><div className="divide-y divide-[#f2eee8]/20">{faqs.map(([q, a]) => <details key={q} className="group py-5"><summary className="flex cursor-pointer list-none items-center justify-between font-display text-xl tracking-[-0.04em] [&::-webkit-details-marker]:hidden"><span>{q}</span><span className="text-2xl font-light text-[#d7663f] transition-transform group-open:rotate-45">+</span></summary><p className="mt-4 max-w-[550px] text-sm leading-6 text-[#aaa49a]">{a}</p></details>)}</div></div></div></section>
 
     <footer className="bg-[#d7663f] px-5 pb-8 pt-20 text-[#252420] md:px-10 md:pt-28"><div className="mx-auto max-w-[1320px]"><Label number="08">Bisnis kamu layak mendapat kesan pertama yang baik</Label><div className="mt-8 flex flex-col justify-between gap-12 md:flex-row md:items-end"><h2 className="max-w-[780px] font-display text-[clamp(3.2rem,7vw,7.5rem)] leading-[0.86] tracking-[-0.08em]">Mari buat website yang<br /><span className="text-[#f2eee8]">terasa seperti kamu.</span></h2><a href="https://wa.me/6287794620631" className="group flex shrink-0 items-center gap-4 rounded-full bg-[#252420] px-6 py-4 font-mono text-[10px] uppercase tracking-[0.16em] text-[#f2eee8] transition-transform hover:-translate-y-1">Mari ngobrol <span className="transition-transform group-hover:translate-x-1"><Arrow /></span></a></div><div className="mt-24 grid gap-8 border-t border-[#252420]/30 pt-5 font-mono text-[10px] uppercase tracking-[0.14em] md:grid-cols-3"><a className="hover:underline" href="mailto:halo@getstore.my.id">halo@getstore.my.id</a><a className="hover:underline" href="https://wa.me/6287794620631">+62 877 9462 0631</a><span className="md:text-right">GetStore.my.id / © 2024—25</span></div></div></footer>
-  </main>;
+    </main>
+  </>;
 }
