@@ -21,8 +21,8 @@ export const projects: Project[] = [
     category: "Salon & beauty house",
     location: "Jakarta Selatan",
     href: "https://ruang-rona.getstore.my.id",
-    image: "https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=85",
-    alt: "Interior salon kecantikan",
+    image: "/images/portfolio-ruang-rona.webp",
+    alt: "Pratinjau website Ruang Rona",
   },
   {
     name: "Pulang Rapi",
@@ -46,6 +46,6 @@ export const projects: Project[] = [
     location: "Indonesia",
     href: "https://nusa-medika.getstore.my.id",
     image: "/images/portfolio-nusa-medika.webp",
-    alt: "Dokter memberikan konsultasi kesehatan",
+    alt: "Pratinjau website Nusa Medika",
   },
 ];

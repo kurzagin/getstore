@@ -19,7 +19,7 @@ export default function PortfolioPage() {
           {projects.map((project, index) => (
             <a key={project.name} href={project.href} target="_blank" rel="noreferrer" className={`group block ${index % 3 === 1 ? "md:mt-24" : ""}`}>
               <div className="relative aspect-[1.2/1] overflow-hidden bg-[#3a3833]">
-                <Image src={project.image} alt={project.alt} fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover saturate-[0.7] transition duration-700 group-hover:scale-105 group-hover:saturate-100" />
+                <Image src={project.image} alt={project.alt} fill sizes="(max-width: 768px) 100vw, 50vw" style={{ objectPosition: "top" }} className="object-cover object-top saturate-[0.7] transition duration-700 group-hover:scale-105 group-hover:saturate-100" />
                 <span className="absolute left-5 top-5 bg-[#f2eee8] px-3 py-2 font-mono text-[9px] uppercase tracking-[0.15em] text-[#252420]">{String(index + 1).padStart(2, "0")} / Kunjungi situs ↗</span>
               </div>
               <div className="mt-5 flex items-start justify-between border-t border-[#f2eee8]/25 pt-3">

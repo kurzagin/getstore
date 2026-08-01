@@ -8,4 +8,5 @@ body { margin: 0; background: var(--background); color: var(--foreground); font-
 a { -webkit-tap-highlight-color: transparent; }
 a:focus-visible, summary:focus-visible { outline: 2px solid #d7663f; outline-offset: 5px; }
 .font-display { font-family: var(--font-display), Arial, Helvetica, sans-serif; }
+img.object-top { object-position: top !important; }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; } }
