@@ -2,10 +2,10 @@ import Image from "next/image";
 
 const images = {
   hero: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1400&q=85",
-  restaurant: "https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=1200&q=85",
-  fashion: "https://images.unsplash.com/photo-1445205170230-053b83016050?auto=format&fit=crop&w=1200&q=85",
+  restaurant: "/images/portfolio-pangkas-kala.webp",
+  fashion: "/images/portfolio-lungguh.webp",
   beauty: "https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=85",
-  construction: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1200&q=85",
+  construction: "/images/portfolio-pulang-rapi.webp",
 };
 
 function Arrow() { return <span aria-hidden="true" className="text-lg leading-none">↗</span>; }
