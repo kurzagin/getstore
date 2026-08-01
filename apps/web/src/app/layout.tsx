@@ -17,6 +17,7 @@ export const metadata: Metadata = {
   title: "GetStore — Website yang terasa seperti bisnis kamu",
   description: "GetStore merancang dan mengembangkan website profesional untuk UMKM Indonesia.",
   alternates: { canonical: "https://getstore.my.id" },
+  icons: { icon: "/icon.svg", shortcut: "/icon.svg" },
 };
 
 export default function RootLayout({
