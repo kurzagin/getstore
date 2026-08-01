@@ -1,0 +1,5 @@
+import Link from "next/link";
+import { siteConfig } from "@/content/site";
+import { whatsappUrl } from "@/lib/whatsapp";
+export default function SiteFooter() { return <footer className="site-footer"><div className="shell footer-grid"><div><Link href="/" className="wordmark footer-wordmark"><span>Pulang</span><b>Rapi</b></Link><p className="footer-desc">{siteConfig.descriptor}. {siteConfig.description}</p></div><div><p className="footer-label">Kunjungi</p><p>{siteConfig.address}</p><p>{siteConfig.hours}</p></div><div><p className="footer-label">Hubungi</p><p><a href={whatsappUrl()}>WhatsApp {siteConfig.displayPhone}</a></p><p><a href={`https://instagram.com/${siteConfig.instagram.replace("@", "")}`}>{siteConfig.instagram}</a></p></div><div><p className="footer-label">Menu</p><p><Link href="/layanan">Layanan</Link></p><p><Link href="/faq">FAQ</Link></p><p><span className="muted">Kebijakan komplain — segera dilengkapi</span></p></div></div><div className="shell footer-bottom"><span>© {new Date().getFullYear()} Pulang Rapi</span><span>Data bisnis pada situs ini perlu dikonfirmasi sebelum launch.</span></div></footer>; }
+

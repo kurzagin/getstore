@@ -1,0 +1,1 @@
+These prompts describe the culturally relevant photography used in public/images. The current PNGs are generated assets; replace them with original WEBP/AVIF salon photography before production while keeping the same subject and aspect ratio.

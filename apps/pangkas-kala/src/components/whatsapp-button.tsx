@@ -1,0 +1,2 @@
+import { whatsappUrl, bookingMessage } from "@/lib/whatsapp";
+export default function WhatsAppButton({ label="Booking via WhatsApp", service, barber, className="" }: { label?:string; service?:string; barber?:string; className?:string }) { return <a className={`btn btn-copper ${className}`} href={whatsappUrl(bookingMessage(service,barber))} target="_blank" rel="noreferrer">{label} <span aria-hidden="true">↗</span></a> }

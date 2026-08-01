@@ -1,0 +1,3 @@
+import { whatsappUrl } from "@/lib/whatsapp";
+import { siteConfig } from "@/content/site";
+export default function CTA({ title = "Bereskan cucian tanpa mengacak jadwal.", text = "Kirim lokasi, perkiraan jumlah cucian, dan layanan yang Anda butuhkan. Kami akan membalas dengan jadwal serta perkiraan biayanya." }: { title?: string; text?: string }) { return <section className="cta-band"><div className="shell cta-inner"><div><p className="eyebrow">Siap menitipkan cucian?</p><h2>{title}</h2><p>{text}</p></div><div className="cta-actions"><a className="button button-light" href={whatsappUrl()}>Mulai pesanan di WhatsApp ↗</a><a className="text-link light-link" href={`tel:+${siteConfig.phone}`}>Atau hubungi kami langsung</a></div></div></section>; }

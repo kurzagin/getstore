@@ -1,0 +1,2 @@
+import Link from "next/link";
+export default function NotFound() { return <div className="page-shell"><section className="page-hero"><p className="eyebrow">404 · Halaman tidak ditemukan</p><h1>Mungkin halamannya sedang dirawat.</h1><p>Alamat yang Anda buka tidak tersedia. Kembali ke beranda atau lihat menu perawatan kami.</p><Link href="/" className="button button-primary">Kembali ke beranda <span>↗</span></Link></section></div>; }

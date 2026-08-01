@@ -1,0 +1,3 @@
+import type { Metadata } from "next"; import { pageMetadata } from "@/lib/metadata"; import SectionHeading from "@/components/section-heading"; import GalleryGrid from "@/components/gallery-grid";
+export const metadata:Metadata=pageMetadata("Galeri potongan","Referensi potongan pendek, sedang, fade, klasik, dan janggut dari Pangkas Kala.","/galeri");
+export default function GalleryPage(){return <div><section className="site-container py-16 md:py-24"><SectionHeading eyebrow="Galeri" title="Bawa referensi. Kita bicarakan.">Hasil potongan dipengaruhi jenis rambut, arah tumbuh, dan bentuk kepala. Foto ini adalah referensi, bukan janji hasil yang identik.</SectionHeading><div className="mt-12"><GalleryGrid/></div></section></div>}

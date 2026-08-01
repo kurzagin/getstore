@@ -1,0 +1,12 @@
+import type { Metadata } from "next";
+import { DM_Sans, Playfair_Display } from "next/font/google";
+import { business, services } from "@/data/business";
+import SiteHeader from "@/components/site-header";
+import SiteFooter from "@/components/site-footer";
+import WhatsAppFloat from "@/components/whatsapp-float";
+import "./globals.css";
+
+const sans = DM_Sans({ variable: "--font-sans", subsets: ["latin"], display: "swap" });
+const serif = Playfair_Display({ variable: "--font-serif", subsets: ["latin"], display: "swap", weight: ["500", "600", "700"] });
+export const metadata: Metadata = { metadataBase: new URL("https://pangkas-kala.example"), title: { default: business.seo.title, template: `%s — ${business.name}` }, description: business.seo.description, keywords: ["barbershop Cilandak", "pangkas rambut Jakarta Selatan", "barber dekat Cilandak"], icons: { icon: "/favicon.ico" } };
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) { const jsonLd={"@context":"https://schema.org","@type":"HairSalon","name":business.name,"description":business.description,"url":"https://pangkas-kala.example","telephone":business.phone,"sameAs":[business.instagram],"address":{"@type":"PostalAddress","streetAddress":business.address,"addressLocality":"Jakarta Selatan","addressRegion":"DKI Jakarta","postalCode":"12430","addressCountry":"ID"},"geo":{"@type":"GeoCoordinates","latitude":business.coordinates.latitude,"longitude":business.coordinates.longitude},"openingHoursSpecification":business.hours.map(h=>({"@type":"OpeningHoursSpecification","dayOfWeek":h.day,opens:h.open,closes:h.close})),"contactPoint":{"@type":"ContactPoint","telephone":business.phone,"contactType":"customer service","availableLanguage":"Indonesian"},"hasOfferCatalog":{"@type":"OfferCatalog","name":"Layanan Pangkas Kala","itemListElement":services.map(s=>({"@type":"Offer","name":s.name,"price":s.price,"priceCurrency":"IDR"}))}}; return <html lang="id" className={`${sans.variable} ${serif.variable}`}><body><a className="skip-link" href="#main">Lewati ke konten</a><aside className="demo-notice" aria-label="Pemberitahuan demo"><span>DEMO / PORTFOLIO</span><p>Ini adalah situs demo untuk Pangkas Kala, dibuat oleh Getstore.</p><a href="https://getstore.my.id" target="_blank" rel="noreferrer">getstore.my.id ↗</a></aside><SiteHeader /><main id="main">{children}</main><SiteFooter /><WhatsAppFloat/><script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(jsonLd)}} /></body></html>; }

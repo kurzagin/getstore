@@ -1,0 +1,1 @@
+export const testimonials=["Layarnya kelihatan dari belakang, pesanan tetap cepat meski lagi ramai.","Enak buat ngajak satu geng tanpa takut kehujanan.","Harganya masih rasa angkringan, bukan harga tempat nongkrong."];

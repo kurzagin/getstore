@@ -1,0 +1,8 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import Image from "next/image";
+import { articles, getArticle } from "@/data/journal";
+import { notFound } from "next/navigation";
+export function generateStaticParams() { return articles.map(({ slug }) => ({ slug })); }
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> { const article = getArticle((await params).slug); return { title: article?.title ?? "Jurnal", description: article?.excerpt }; }
+export default async function ArticlePage({ params }: { params: Promise<{ slug: string }> }) { const article = getArticle((await params).slug); if (!article) notFound(); return <div className="page-shell"><article className="article-layout"><div className="breadcrumbs"><Link href="/jurnal">Jurnal</Link> <span>/</span> {article.category}</div><header className="article-header"><span className="service-category">{article.category}</span><h1>{article.title}</h1><div className="article-meta"><span>{article.published}</span><span>{article.readingTime}</span></div></header><div className="article-hero"><Image src={article.hero} alt={`Ilustrasi ${article.title}`} fill priority sizes="(max-width: 980px) 100vw, 980px" /></div><div className="article-body">{article.sections.map(section => <section key={section.heading}><h2>{section.heading}</h2>{section.paragraphs.map(paragraph => <p key={paragraph}>{paragraph}</p>)}</section>)}</div><div className="article-share"><p>Bagikan artikel ini</p><a className="text-link" href={`https://wa.me/?text=${encodeURIComponent(article.title + " — https://ruangrona.example/jurnal/" + article.slug)}`} target="_blank" rel="noreferrer">Kirim lewat WhatsApp ↗</a></div></article></div>; }
