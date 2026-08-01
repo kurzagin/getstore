@@ -15,7 +15,7 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline:3px solid v
 .demo-notice p { margin:0; }
 .demo-notice a { font-weight:800; text-decoration:underline; text-underline-offset:3px; }
 .demo-notice a:hover { color:#1857A4; }
-.site-header { position:relative; z-index:10; border-bottom:1px solid var(--soft-line); background:rgba(245,240,230,.96); }
+.site-header { position:sticky; top:0; z-index:10; border-bottom:1px solid var(--soft-line); background:rgba(245,240,230,.96); }
 .header-inner { min-height:76px; display:flex; align-items:center; gap:32px; }
 .wordmark { font-size:21px; letter-spacing:-.06em; line-height:1; display:inline-flex; gap:5px; align-items:baseline; }
 .wordmark b { color:var(--clay); font-weight:700; }
@@ -93,3 +93,4 @@ h1 i { color:var(--leaf); font-style:normal; }
 .service-image-layout h2 { font-size:clamp(31px,4vw,48px); line-height:1.05; margin-bottom:16px; }
 .service-image-layout p:last-child { color:#4D6780; max-width:390px; }
 @media (max-width: 640px) { .service-image-strip { padding:42px 0; }.service-image-layout { display:block; }.service-image-layout .section-photo { margin-bottom:34px; }.care-photo,.status-photo,.area-photo { max-height:none; } }
+@media (max-width:640px) { .demo-notice { justify-content:center; flex-wrap:wrap; gap:6px 10px; overflow:visible; text-align:center; white-space:normal; } .demo-notice p { flex:1 1 100%; max-width:100%; } .demo-notice a { display:inline; } }

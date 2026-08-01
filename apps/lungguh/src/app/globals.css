@@ -43,4 +43,5 @@ button, a { -webkit-tap-highlight-color:transparent; }
 .skip-link:focus { top:1rem; }
 @media (min-width:768px) { .container { width:min(100% - 4rem,1240px); } }
 @media (max-width:640px) { .demo-notice { gap:8px; flex-wrap:wrap; text-align:center; } .demo-notice p { max-width:230px; } }
+@media (max-width:640px) { .demo-notice { justify-content:center; gap:6px 10px; overflow:visible; text-align:center; white-space:normal; } .demo-notice p { flex:1 1 100%; max-width:100%; } .demo-notice a { display:inline; } }
 @media (prefers-reduced-motion:reduce) { *,*::before,*::after { scroll-behavior:auto!important; transition-duration:.01ms!important; animation-duration:.01ms!important; } }
